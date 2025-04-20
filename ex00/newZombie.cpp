@@ -6,7 +6,7 @@
 /*   By: peli <peli@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 17:47:06 by peli              #+#    #+#             */
-/*   Updated: 2025/04/18 18:18:48 by peli             ###   ########.fr       */
+/*   Updated: 2025/04/20 16:18:51 by peli             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,5 @@
 
 Zombie*	newZombie( std::string name )
 {
-	name = name;
-	return ();
+	return new Zombie(name);
 }

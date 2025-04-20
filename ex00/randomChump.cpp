@@ -6,10 +6,14 @@
 /*   By: peli <peli@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 17:47:01 by peli              #+#    #+#             */
-/*   Updated: 2025/04/18 17:48:23 by peli             ###   ########.fr       */
+/*   Updated: 2025/04/20 16:18:59 by peli             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
 void	randomChump( std::string name )
+{
+	Zombie z(name);
+	z.announce();
+}
