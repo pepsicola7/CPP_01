@@ -1,5 +1,5 @@
 # nom de l'excutable
-TARGET = ./zombie
+TARGET = ./war
 
 #Compilateur
 CXX = c++
@@ -10,8 +10,8 @@ CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 #Fichier sources et objets
 SRC = main.cpp \
 		Weapon.cpp \
-		HumainA.cpp \
-		HumainB.cpp
+		HumanA.cpp \
+		HumanB.cpp
 OBJ = $(SRC:.cpp=.o)
 
 #regle principale

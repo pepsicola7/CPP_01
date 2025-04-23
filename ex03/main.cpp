@@ -6,7 +6,7 @@
 /*   By: peli <peli@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 17:44:57 by peli              #+#    #+#             */
-/*   Updated: 2025/04/22 20:17:53 by peli             ###   ########.fr       */
+/*   Updated: 2025/04/23 15:42:53 by peli             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "HumanB.hpp"
 
 int	main()
-{
+{	
 	{
 		Weapon club = Weapon("crude spiked club");
 		HumanA bob("Bob", club);
@@ -33,3 +33,13 @@ int	main()
 	}
 	return (0);
 }
+
+	//Exemple pour le ref et le copie d'un string
+		// std::string oui("Hello");
+		// std::string &non = oui;
+		// std::string test = oui;
+		
+		// std::cout << non << std::endl;
+		// oui = "Test";
+		// std::cout << non << std::endl;
+		// std::cout << test << std::endl;

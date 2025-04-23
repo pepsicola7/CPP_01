@@ -6,12 +6,9 @@
 /*   By: peli <peli@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 17:49:34 by peli              #+#    #+#             */
-/*   Updated: 2025/04/22 20:23:21 by peli             ###   ########.fr       */
+/*   Updated: 2025/04/23 15:27:47 by peli             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#ifndef HUMANA_HPP
-#define HUMANA_HPP
 
 #include "HumanB.hpp"
 #include "Weapon.hpp"
@@ -19,6 +16,7 @@
 HumanB::HumanB(std::string nameB)
 {
 	this->nameB = nameB;
+	this->WeaponB = NULL;
 }
 
 HumanB::~HumanB()
@@ -27,12 +25,13 @@ HumanB::~HumanB()
 
 void	HumanB::attack()
 {
-	std::cout << nameB << " attacks with their " << Weapon::setType << std::endl;
+	if (WeaponB)
+		std::cout << nameB << " attacks with their " << WeaponB->getType() << std::endl;
+	else
+		std::cout << nameB << " has no weapon" << std::endl;
 }
 
-void	HumanB::setWeapon(Weapon WeaponB)
+void	HumanB::setWeapon(Weapon& Weapon)
 {
-	
+	this->WeaponB = &Weapon;
 }
-
-#endif
