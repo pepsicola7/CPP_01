@@ -5,7 +5,7 @@ TARGET = ./zombie
 CXX = c++
 
 #Flags
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 #-g -fsanitize=address
 
 #Fichier sources et objets
 SRC = main.cpp \
@@ -32,7 +32,7 @@ clean:
 
 #Nettoyage complets
 fclean: clean
-	rm -rf *.o
+	rm -rf $(TARGET)
 
 #Regle pour executer le programme
 run: $(TARGET)

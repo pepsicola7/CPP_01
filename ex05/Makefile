@@ -31,7 +31,7 @@ clean:
 
 #Nettoyage complets
 fclean: clean
-	rm -rf *.o
+	rm -rf $(TARGET)
 
 #Regle pour executer le programme
 run: $(TARGET)

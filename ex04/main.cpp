@@ -6,7 +6,7 @@
 /*   By: peli <peli@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 16:13:19 by peli              #+#    #+#             */
-/*   Updated: 2025/04/24 16:30:49 by peli             ###   ########.fr       */
+/*   Updated: 2025/04/28 16:16:54 by peli             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,26 @@
 #include <string>
 #include <fstream>
 
-int	parser_filename(const char* filename)
-{
-	std::string name(filename);
-
-	if (name.length() >= 4 && name.substr(name.length() - 4) == ".txt")
-		return (0);
-	return (1);
-}
-
 std::string replace_all(std::string line, std::string s1, std::string s2)
 {
-	while (line.find(s1) != std::string::npos)
+	size_t		i;
+	std::string	result;
+
+	i = 0;
+	while (i < line.length())
 	{
-		line = line.replace(line.find(s1), s1.length(), s2);
+		if (line.substr(i, s1.length()) == s1)
+		{
+			result += s2;
+			i += s1.length();
+		}
+		else
+		{
+			result += line[i];
+			i++;
+		}
 	}
-	return (line);
+	return (result);
 }
 
 int	main(int argc, char **argv)
@@ -41,11 +45,6 @@ int	main(int argc, char **argv)
 	if (argc != 4)
 	{
 		std::cout << "Lack of the argument" << std::endl;
-		return (1);
-	}
-	if (parser_filename(argv[1]))
-	{
-		std::cout << "Error of the filename" << std::endl;
 		return (1);
 	}
 	filename = argv[1];
